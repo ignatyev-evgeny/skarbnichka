@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'SKARBNYCHKA',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>SKARBNYCHKA</b>',
     'logo_img' => '/images/logo.png',
     'logo_img_class' => 'brand-image elevation-3',
     'logo_img_xl' => null,
