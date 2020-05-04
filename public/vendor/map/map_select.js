@@ -29,6 +29,7 @@ function initMap() {
         });
         markers.push(marker);
         $('.coordinates').val(mapsMouseEvent.latLng.toString());
+        geocodeLatLng(geocoder, map, mapsMouseEvent.latLng.toString());
     });
 }
 
@@ -44,6 +45,22 @@ function geocodeAddress(geocoder, resultsMap) {
             $('.coordinates').val(results[0].geometry.location.toString());
         } else {
             $('#modal-danger').modal('show');
+        }
+    });
+}
+
+function geocodeLatLng(geocoder, map, coordinates) {
+    var latlngStr = coordinates.split(', ', 2);
+    var latlng = {lat: parseFloat(latlngStr[0].replace('(', '')), lng: parseFloat(latlngStr[1].replace(')', ''))};
+    geocoder.geocode({'location': latlng}, function(results, status) {
+        if (status === 'OK') {
+            if (results[0]) {
+                $('#address').val(results[0].formatted_address);
+            } else {
+                $('#modal-danger-map').modal('show');
+            }
+        } else {
+            $('#modal-danger-map').modal('show');
         }
     });
 }

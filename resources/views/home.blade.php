@@ -26,9 +26,7 @@
 @section('js')
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWJdJJRd3HojKrk0U_qs5cKPKdqlRx9hQ&callback=initMap"></script>
     <script>
-
         function initMap() {
-
             var locations = [
                 @foreach($objects as $object)
                     [
@@ -43,13 +41,11 @@
                     ],
                 @endforeach
             ];
-
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 12,
                 center: new google.maps.LatLng(46.467733953874486, 30.740540027618408),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
-
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var coordinates = {lat: position.coords.latitude, lng: position.coords.longitude};
@@ -59,13 +55,10 @@
                         map: map,
                         icon: 'https://skarbnychka.in.ua/assets/img/me.png'
                     });
-
                 });
             }
-
             var infoWindow = new google.maps.InfoWindow();
             var marker, i;
-
             for (i = 0; i < locations.length; i++) {
                 var lat = locations[i][1];
                 var lng = locations[i][2];
@@ -77,26 +70,21 @@
                     map: map
                 });
                 google.maps.event.addListener(marker, "click", (function(marker, i) {
-
                     var phoneArr = locations[i][6].split('|');
                     var phone = '', j;
                     for (j = 0; j < phoneArr.length; j++) {
                         phone += '<b>' + phoneArr[j] + '</b><br>';
                     }
-
-                    console.log(phone);
-                        var html = "<h6>" + locations[i][0] + "</h6><h7>" + locations[i][4] + "</h7><br><br><h7>" + phone + "</h7><br><a href='/info_object/" + locations[i][5] + "'>Докладніше</a>";
-
-                        return function() {
-                            infoWindow.setOptions({
-                                content:html
-                            });
-                            infoWindow.open(map, marker);
-                        };
+                    var html = "<h6>" + locations[i][0] + "</h6><h7>" + locations[i][4] + "</h7><br><br><h7>" + phone + "</h7><br><a href='/info_object/" + locations[i][5] + "'>Докладніше</a>";
+                    return function() {
+                        infoWindow.setOptions({
+                            content:html
+                        });
+                        infoWindow.open(map, marker);
+                    };
                     })(marker, i)
                 );
             }
         }
-
     </script>
 @stop

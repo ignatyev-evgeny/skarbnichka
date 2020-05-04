@@ -130,6 +130,25 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modal-danger-map">
+        <div class="modal-dialog">
+            <div class="modal-content bg-danger">
+                <div class="modal-header">
+                    <h4 class="modal-title">Помилка при виявленні об'єкта</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Спробуйте вказати адресу об'єкта в ручну.</p>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-outline-light w-100" data-dismiss="modal">Закрити</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
