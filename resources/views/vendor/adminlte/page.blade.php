@@ -153,10 +153,10 @@
                                 <a class="nav-link dropdown-item dropdown-toggle " href="#" data-toggle="dropdown">Управління</a>
                                 <ul class="dropdown-menu border-0 shadow">
                                     <li class="">
-                                        <a class="dropdown-item " href="http://cabinet.charity/administrative_object">Адміністративні об'єкти</a>
+                                        <a class="dropdown-item" href="/administrative_object">Адміністративні об'єкти</a>
                                     </li>
                                     <li class="">
-                                        <a class="dropdown-item " href="http://cabinet.charity/civilian_object">Цивільні об'єкти</a>
+                                        <a class="dropdown-item" href="/civilian_object">Цивільні об'єкти</a>
                                     </li>
                                 </ul>
                             </li>
