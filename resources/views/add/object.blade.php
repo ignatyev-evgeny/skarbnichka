@@ -92,7 +92,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="phone">Вкажіть номер телефону</label>
-                                            <input required type="text" class="form-control" name="phone[]" id="phone" placeholder="Вкажіть номер телефону">
+                                            <input required type="text" class="phone-masked form-control" name="phone[]" id="phone" placeholder="Вкажіть номер телефону">
                                         </div>
                                         <div class="form-group">
                                             <label for="message">Ваше звернення</label>
@@ -137,4 +137,5 @@
 @section('js')
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWJdJJRd3HojKrk0U_qs5cKPKdqlRx9hQ&callback=initMap"></script>
     <script src="{{ asset('vendor/map/map_select.js') }}"></script>
+    <script src="{{ asset('vendor/masked/masked.js') }}"></script>
 @stop

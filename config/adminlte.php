@@ -333,6 +333,17 @@ return [
             ],
         ],
         [
+            'name' => 'MaskedInput',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js',
+                ],
+            ],
+        ],
+        [
             'name' => 'Chartjs',
             'active' => false,
             'files' => [

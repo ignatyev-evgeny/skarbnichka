@@ -48,7 +48,7 @@
                     @endif
                 </div>
                 <div class="input-group mb-3">
-                    <input type="tel" name="phone" class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" value="{{ old('phone') }}"
+                    <input type="tel" name="phone" class="phone-masked form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" value="{{ old('phone') }}"
                            placeholder="{{ __('adminlte::adminlte.phone') }}">
                     <div class="input-group-append">
                         <div class="input-group-text">
@@ -119,6 +119,7 @@
 
 @section('adminlte_js')
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('vendor/masked/masked.js') }}"></script>
     @stack('js')
     @yield('js')
 @stop

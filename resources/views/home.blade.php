@@ -41,7 +41,7 @@
                         "{{ $object->name }}",
                         "{{ $coordinates[0] }}",
                         "{{ $coordinates[1] }}",
-                        "https://charity.ignatyev.pro/assets/img/help.png",
+                        "https://skarbnychka.in.ua/assets/img/help.png",
                         "{{ $object->message }}",
                         "1"
                     ],
@@ -61,7 +61,7 @@
                     var me = new google.maps.Marker({
                         position: coordinates,
                         map: map,
-                        icon: 'https://charity.ignatyev.pro/assets/img/me.png'
+                        icon: 'https://skarbnychka.in.ua/assets/img/me.png'
                     });
 
                 });

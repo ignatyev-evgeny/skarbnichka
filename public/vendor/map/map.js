@@ -11,7 +11,7 @@ function initMap() {
             "Одесская областная клиническая больница",
             46.581983,
             30.789656,
-            "https://charity.ignatyev.pro/assets/img/help.png",
+            "https://skarbnychka.in.ua/assets/img/help.png",
             "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.",
             "1"
         ],
@@ -19,7 +19,7 @@ function initMap() {
             "Городская инфекционная клиническая больница",
             46.494581,
             30.722641,
-            "https://charity.ignatyev.pro/assets/img/help.png",
+            "https://skarbnychka.in.ua/assets/img/help.png",
             "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.",
             "2"
         ],
@@ -27,7 +27,7 @@ function initMap() {
             "Городская клиническая больница №11",
             46.488195,
             30.693860,
-            "https://charity.ignatyev.pro/assets/img/help.png",
+            "https://skarbnychka.in.ua/assets/img/help.png",
             "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.",
             "3"
         ]
@@ -46,7 +46,7 @@ function initMap() {
             var me = new google.maps.Marker({
                 position: coordinates,
                 map: map,
-                icon: 'https://charity.ignatyev.pro/assets/img/me.png'
+                icon: 'https://skarbnychka.in.ua/assets/img/me.png'
             });
 
         });
