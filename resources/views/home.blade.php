@@ -26,11 +26,6 @@
 @section('js')
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWJdJJRd3HojKrk0U_qs5cKPKdqlRx9hQ&callback=initMap"></script>
     <script>
-        jQuery(function() {
-            if ($("#map").length) {
-                initMap();
-            }
-        });
 
         function initMap() {
 
@@ -43,7 +38,8 @@
                         "{{ $coordinates[1] }}",
                         "https://skarbnychka.in.ua/assets/img/help.png",
                         "{{ $object->message }}",
-                        "1"
+                        "{{ $object->id }}",
+                        "{{ implode('|', json_decode($object->phone, true)) }}"
                     ],
                 @endforeach
             ];
@@ -81,10 +77,15 @@
                     map: map
                 });
                 google.maps.event.addListener(marker, "click", (function(marker, i) {
-                        var title = (locations[i][0] !== undefined) ? locations[i][0] : '';
-                        var description = (locations[i][4] !== undefined) ? locations[i][4] : '';
-                        var link = (locations[i][6] !== undefined) ? locations[i][6] : '';
-                        var html = "<h6>" + title + "</h6><h7>" + description + "</h7><br><br><a href='https://:" + link + "'>Отримати контактні дані</a>";
+
+                    var phoneArr = locations[i][6].split('|');
+                    var phone = '', j;
+                    for (j = 0; j < phoneArr.length; j++) {
+                        phone += '<b>' + phoneArr[j] + '</b><br>';
+                    }
+
+                    console.log(phone);
+                        var html = "<h6>" + locations[i][0] + "</h6><h7>" + locations[i][4] + "</h7><br><br><h7>" + phone + "</h7><br><a href='/info_object/" + locations[i][5] + "'>Докладніше</a>";
 
                         return function() {
                             infoWindow.setOptions({
