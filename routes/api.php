@@ -16,6 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('objects', function () {
     $objects = \App\Models\Objects::all();
-    $objects = $objects->toJson();
-    return response($objects, 200)->header('Content-Type', 'application/json');
+    foreach ($objects as $object) {
+        if($object->status == 1) {
+            if($object->type == 0) {
+                $phone = $object->phone;
+            } else {
+                $phone = 'Контактні дані будуть доступні після реєстрації в особистому кабінеті.';
+            }
+            $objectsArr[] = [
+                'id' => $object->id,
+                'type' => $object->type,
+                'coordinates' => $object->coordinates,
+                'name' => $object->name,
+                'address' => $object->address,
+                'phone' => $phone,
+                'message' => $object->message
+            ];
+        }
+    }
+    return response()->json($objectsArr);
 });
